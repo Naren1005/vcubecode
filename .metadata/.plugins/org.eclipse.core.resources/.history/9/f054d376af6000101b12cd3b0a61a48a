@@ -1,0 +1,27 @@
+package Arrays1;
+
+public class singleArray1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*
+		 * int i[]=new int[5]; i[0]=10; i[1]=20;
+		 */
+		
+		int[] i= {1,2,3,4,5};
+		int j;
+		int sum=0;
+		
+		System.out.println("no of variable in the i are : "+i.length);
+		System.out.println(i[0]);
+		
+		  for(j=0;j<i.length;j++) 
+		  { 
+			  sum=sum+i[j];
+		  		  
+		  } System.out.println(sum);
+		 
+
+	}
+
+}

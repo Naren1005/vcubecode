@@ -1,0 +1,23 @@
+R ="Naren"
+url=http://127.0.0.1/orangehrm-2.5.0.2/login.php
+uname=selenium
+passwd=selenium
+XUN=//input [@type='text']
+XPWD=//input[@tabindex='2']
+XSUB=//input[@name='Submit']
+
+**Add emp xpath********
+
+XPIM=//span[text()='PIM']
+XADD=//span[text()='Add Employee']
+XFRAME=//iframe[@name='rightMenu']
+XID=//input[@name='txtEmployeeId']
+XLNAME=//input[@id='txtEmpLastName']
+XFNAME=//input[@name='txtEmpFirstName']
+XMNAME=//input[@name='txtEmpMiddleName']
+XNNAME=//input[@name='txtEmpNickName']
+XPHOTO=//input[@name='photofile']
+XSAVE=//input[@id='btnEdit']
+XBACK=//input[@class='backbutton']
+
+**** empdetails******

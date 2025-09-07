@@ -1,0 +1,27 @@
+package Collections1;
+
+import java.util.Vector;
+
+public class vectorColl {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Vector v1=new Vector(20);
+		v1.add("Naren");
+		v1.add(42);
+		v1.add(0,"akurathi");
+		v1.add("Vindhya");
+		v1.add(3);
+		v1.add(0,"akurathi");
+		v1.add("Lalitha varshini");
+		v1.add(4);
+		v1.add(0,"akurathi");
+		v1.add("Hemalatha");
+		v1.add(35);
+		v1.add(0,"akurathi venkata");
+		System.out.println(v1);
+		System.out.println(v1.capacity());
+	}
+
+}

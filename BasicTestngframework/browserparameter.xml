@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+	  <parameter name="browsername" value="edge"></parameter>
+	  <parameter name="UN" value="selenium"/>
+	  <parameter name="PW" value="selenium"/>
+	  <parameter name="APURL" value="http://127.0.0.1/orangehrm-2.5.0.2/login.php"/>
+	<classes>
+      <class name="parameterise1.parameters"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

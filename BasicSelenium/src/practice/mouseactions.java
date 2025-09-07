@@ -1,0 +1,102 @@
+package practice;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class mouseactions {
+
+	public static void main(String[] args) throws InterruptedException, AWTException {
+		// TODO Auto-generated method stub
+		
+		System.setProperty("webdriver.chorme.driver","D:\\software_install setup\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+		
+		WebDriver driver=new ChromeDriver();
+		driver.get("http://127.0.0.1/orangehrm-2.5.0.2/login.php");
+		
+		driver.manage().window().maximize();
+		
+		Actions act=new Actions(driver);
+		
+		WebElement uname=driver.findElement(By.xpath("//input[@name='txtUserName']"));
+		uname.sendKeys("selium");
+		act.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).perform();
+		act.keyDown(Keys.CLEAR).keyUp(Keys.CLEAR).perform();
+		Thread.sleep(2000);
+		uname.sendKeys("selenium");
+		act.keyDown(Keys.TAB).keyUp(Keys.TAB).perform();
+		WebElement pwd=driver.findElement(By.xpath("//input[@name='txtPassword']"));
+		pwd.sendKeys("selenium");
+		Thread.sleep(2000);
+		act.keyDown(Keys.TAB).keyUp(Keys.TAB).perform();
+		
+		WebElement log=driver.findElement(By.xpath("//input[@name='Submit']"));
+		Thread.sleep(2000);
+		act.keyDown(Keys.TAB).keyUp(Keys.TAB).perform();
+		log.click();
+		
+		
+		Thread.sleep(4000);
+		WebElement pim=driver.findElement(By.xpath("//span[text()='PIM']"));
+	
+		
+		act.moveToElement(pim).perform();
+		//act.doubleClick(pim).perform();
+		//act.contextClick(pim).perform();
+		
+		driver.findElement(By.xpath("//span[text()='Add Employee']")).click();
+		
+		driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@name='rightMenu']")));
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//input[@class='backbutton']")).click();
+		driver.findElement(By.xpath("//input[@name='txtEmployeeId']")).clear();
+		driver.findElement(By.xpath("//input[@name='txtEmployeeId']")).sendKeys("9417358");
+		driver.findElement(By.xpath("//input[@id='txtEmpLastName']")).sendKeys("Narendra");
+		driver.findElement(By.xpath("//input[@name='txtEmpFirstName']")).sendKeys("Akurathi");
+		driver.findElement(By.xpath("//input[@name='txtEmpMiddleName']")).sendKeys("Venkata");
+		driver.findElement(By.xpath("//input[@name='txtEmpNickName']")).sendKeys("Naren");
+		
+		act.moveToElement(driver.findElement(By.xpath("//input[@name='photofile']"))).click().perform();
+		
+		StringSelection s= new StringSelection("C:\\Users\\naren\\OneDrive\\Desktop\\250720081715.jpg");
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(s,null);
+		Thread.sleep(2000);
+		
+		Robot Rob= new Robot();
+		Rob.keyPress(KeyEvent.VK_CONTROL);
+		Rob.keyPress(KeyEvent.VK_V);
+		Rob.keyRelease(KeyEvent.VK_CONTROL);
+		Rob.keyRelease(KeyEvent.VK_V);
+		
+		Thread.sleep(2000);
+		
+		Rob.keyPress(KeyEvent.VK_ENTER);
+		Rob.keyRelease(KeyEvent.VK_ENTER);
+		
+		driver.findElement(By.xpath("//input[@id='btnEdit']")).click();
+		Thread.sleep(2000);
+		
+
+		
+		driver.findElement(By.xpath("//input[@class='backbutton']"));
+		
+		
+		driver.switchTo().defaultContent();
+
+		act.moveToElement(driver.findElement(By.xpath("//span[text()='Time']"))).perform();
+		
+		
+
+	}
+
+}

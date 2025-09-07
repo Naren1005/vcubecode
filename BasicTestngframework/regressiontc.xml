@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+		<class name="failstestcases.animalClass3">
+		   <methods>
+			   <include name="hrs"></include>
+			   <include name="ln1"></include>
+			   <include name="to1"></include>
+			   <include name="sh1"></include>
+			   
+		  </methods>  
+      </class>
+      <class name="failstestcases.animalClass4">
+		  <methods>
+			  <include name="ln"></include>
+			  <include name="bk"></include>
+		  </methods>  
+      </class>
+      <class name="failstestcases.animalClass5">
+		   <methods>
+			   <include name="dg2"></include>
+			    <include name="hm2"></include>
+			   
+		  </methods>  
+      </class>
+      
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

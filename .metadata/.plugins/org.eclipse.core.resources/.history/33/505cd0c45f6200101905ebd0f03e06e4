@@ -1,0 +1,16 @@
+package Collections1;
+
+import java.util.Vector;
+
+public class vectorColl {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Vector v1=new Vector(20);
+		v1.add("Naren");
+		v1.add(42);
+		System.out.println(v1.capacity());
+	}
+
+}

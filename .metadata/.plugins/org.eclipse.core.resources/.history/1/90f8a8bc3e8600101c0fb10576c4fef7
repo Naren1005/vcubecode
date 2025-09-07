@@ -1,0 +1,33 @@
+package additionaloptions;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class browserNavigations {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		System.setProperty("webdriver.chrome.driver","D:\\software_install setup\\chromedriver-win64\\chromedriver.exe");
+		ChromeOptions op=new ChromeOptions();
+		
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.google.com/");
+		driver.manage().window().maximize();
+
+		Thread.sleep(3000);
+		driver.findElement(By.name("q")).sendKeys("hy tutorial");
+		driver.findElement(By.xpath("(//input[@value='Google Search'])[2]")).submit();
+		Thread.sleep(4000);
+		//driver.navigate().back();
+		//driver.navigate().refresh();
+		driver.navigate().to("https://www.hdfcbank.com/");
+		//op.addArguments("--disable-notifications");
+		driver.navigate().back();
+		driver.navigate().forward();
+
+	}
+
+}

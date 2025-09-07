@@ -1,0 +1,16 @@
+package Variables;
+
+public class tews {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+int y;
+		System.out.println(args.length);
+		if (args.length>0)
+		{
+			y=10;
+		}
+		System.out.println(y);
+	}
+
+}

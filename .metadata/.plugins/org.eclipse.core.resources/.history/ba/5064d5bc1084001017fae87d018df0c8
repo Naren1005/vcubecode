@@ -1,0 +1,17 @@
+package Variables;
+
+public class tews {
+
+	//public static void main(String[] args) {
+	// TODO Auto-generated method stub
+	
+	public void abs()
+	{
+	int y=5;
+	System.out.println(y);
+
+	System.out.println(y);
+	}
+}
+
+

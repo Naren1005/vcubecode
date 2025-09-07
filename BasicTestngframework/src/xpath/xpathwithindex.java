@@ -1,0 +1,48 @@
+package xpath;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class xpathwithindex {
+	static WebDriver driver;
+	static JavascriptExecutor js;
+	@Test
+	public void usingindex() throws InterruptedException {
+
+		System.setProperty("webdriver.chrome.driver", "D:\\software_install setup\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
+
+		driver= new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.hyrtutorials.com/p/add-padding-to-containers.html");
+
+		WebElement ab=driver.findElement(By.xpath("(//input[@name='name' and @type='text'])[2]"));
+		ab.sendKeys("naren");
+		highlightelement(ab);
+
+		WebElement as=driver.findElement(By.xpath("((//table[@id='contactList']/tbody/tr)[last()]/td)[2]"));
+		highlightelement(as);
+	String jb=	as.getText();
+	
+	js.executeScript("window.scrollBy(350,1100)");
+		System.out.println("the contact name is :"+ jb);
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath("(//input[@type='checkbox'])[1]")).click();
+	}
+	public static void highlightelement(WebElement elem) {
+
+
+		 js= (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].setAttribute('style','background:yellow;border:4px solid red;')", elem);
+	}
+
+
+
+
+
+}
+
